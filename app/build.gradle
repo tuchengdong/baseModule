@@ -1,6 +1,9 @@
 apply plugin: 'com.android.application'
+apply plugin: 'com.github.dcendents.android-maven'
 //apply plugin: 'android-apt'
 apply plugin: 'realm-android'
+
+group='com.github.tuchengdong'
 
 android {
     compileSdkVersion rootProject.ext.android.compileSdkVersion
