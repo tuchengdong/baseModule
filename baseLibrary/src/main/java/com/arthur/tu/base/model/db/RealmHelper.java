@@ -6,8 +6,6 @@ import com.arthur.tu.base.model.bean.SearchKey;
 
 import java.util.List;
 
-import javax.inject.Inject;
-
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
 import io.realm.RealmResults;
@@ -36,7 +34,6 @@ public class RealmHelper implements DBHelper {
         return instance;
     }
 
-    @Inject
     public RealmHelper() {
         mRealm = Realm.getInstance(new RealmConfiguration.Builder()
                 .deleteRealmIfMigrationNeeded()

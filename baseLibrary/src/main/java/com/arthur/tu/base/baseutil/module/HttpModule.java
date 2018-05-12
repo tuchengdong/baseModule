@@ -15,10 +15,6 @@ import java.io.File;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
-import javax.inject.Singleton;
-
-import dagger.Module;
-import dagger.Provides;
 import okhttp3.Cache;
 import okhttp3.CacheControl;
 import okhttp3.Interceptor;
@@ -30,23 +26,16 @@ import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-@Module
 public class HttpModule {
 
-    @Singleton
-    @Provides
     Retrofit.Builder provideRetrofitBuilder() {
         return new Retrofit.Builder();
     }
 
-    @Singleton
-    @Provides
     OkHttpClient.Builder provideOkHttpBuilder() {
         return new OkHttpClient.Builder();
     }
 
-    @Singleton
-    @Provides
     @GankUrl
     Retrofit provideGankRetrofit(Retrofit.Builder builder, OkHttpClient client) {
         Log.i("TAG", "--provideGankRetrofit");
@@ -54,29 +43,21 @@ public class HttpModule {
     }
 
 
-    @Singleton
-    @Provides
     GankApis provideGankService(@GankUrl Retrofit retrofit) {
         return retrofit.create(GankApis.class);
     }
 
 
-    @Singleton
-    @Provides
     @VideoUrl
     Retrofit provideVideoRetrofit(Retrofit.Builder builder, OkHttpClient client) {
         Log.i("TAG", "--provideVideoRetrofit");
         return createRetrofit(builder, client, VideoApis.HOST);
     }
 
-    @Singleton
-    @Provides
     VideoApis provideVideoService(@VideoUrl Retrofit retrofit) {
         return retrofit.create(VideoApis.class);
     }
 
-    @Singleton
-    @Provides
     OkHttpClient provideClient(OkHttpClient.Builder builder) {
         if (BuildConfig.DEBUG) {
             HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor();

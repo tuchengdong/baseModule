@@ -9,8 +9,6 @@ import com.arthur.tu.base.model.http.response.VideoHttpResponse;
 
 import java.util.List;
 
-import javax.inject.Inject;
-
 import rx.Observable;
 
 
@@ -22,7 +20,6 @@ public class RetrofitHelper1 implements HttpHelper {
     private VideoApis mVideoApis;
     private GankApis mGankApis;
     
-    @Inject
     public RetrofitHelper1(VideoApis videoApis, GankApis gankApis) {
         this.mVideoApis = videoApis;
         this.mGankApis = gankApis;
