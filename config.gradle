@@ -49,7 +49,7 @@ ext {
             "rxandroid"                      : "io.reactivex:rxandroid:1.2.1",
 
             //network
-            "gson"                           : "com.google.code.gson:gson:2.7",
+            "gson"                           : "com.google.code.gson:gson:2.8.0",
             "retrofit"                       : "com.squareup.retrofit2:retrofit:${dependVersion.retrofit}",
             "retrofit-converter-gson"        : "com.squareup.retrofit2:converter-gson:${dependVersion.retrofit}",
             "retrofit-adapter-rxjava"       : "com.squareup.retrofit2:adapter-rxjava:${dependVersion.retrofit}",
