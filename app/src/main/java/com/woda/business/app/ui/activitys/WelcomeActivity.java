@@ -1,4 +1,4 @@
-package com.arthur.tu.base.ui.activitys;
+package com.woda.business.app.ui.activitys;
 
 import com.arthur.tu.base.R;
 import com.arthur.tu.base.base.BaseActivity;

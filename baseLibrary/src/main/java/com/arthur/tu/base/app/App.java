@@ -5,10 +5,6 @@ import android.app.Activity;
 import android.app.Application;
 import android.support.v7.app.AppCompatDelegate;
 
-import com.arthur.tu.base.baseutil.component.AppComponent;
-import com.arthur.tu.base.baseutil.component.DaggerAppComponent;
-import com.arthur.tu.base.baseutil.module.AppModule;
-import com.arthur.tu.base.baseutil.module.HttpModule;
 import com.arthur.tu.base.model.db.RealmHelper;
 
 import java.util.HashSet;
@@ -76,15 +72,15 @@ public class App extends Application {
         Realm.setDefaultConfiguration(realmConfiguration);
     }
 
-    public static AppComponent appComponent;
-
-    public static AppComponent getAppComponent() {
-        if (appComponent == null) {
-            appComponent = DaggerAppComponent.builder()
-                    .appModule(new AppModule(instance))
-                    .httpModule(new HttpModule())
-                    .build();
-        }
-        return appComponent;
-    }
+//    public static AppComponent appComponent;
+//
+//    public static AppComponent getAppComponent() {
+//        if (appComponent == null) {
+//            appComponent = DaggerAppComponent.builder()
+//                    .appModule(new AppModule(instance))
+//                    .httpModule(new HttpModule())
+//                    .build();
+//        }
+//        return appComponent;
+//    }
 }
