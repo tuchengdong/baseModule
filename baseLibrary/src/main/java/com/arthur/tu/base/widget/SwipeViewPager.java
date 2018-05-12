@@ -7,11 +7,6 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.ViewConfiguration;
 
-/**
- * Description:
- * Creator: yxc
- * date: $date $time
- */
 public class SwipeViewPager extends ViewPager {
 
     private int mTouchSlop;

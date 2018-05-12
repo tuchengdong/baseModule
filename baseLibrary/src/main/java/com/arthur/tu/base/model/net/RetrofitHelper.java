@@ -22,44 +22,37 @@ import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-/**
- * Description: RetrofitHelper1
- * Creator: yxc
- * date: 2016/9/21 10:03
- */
 public class RetrofitHelper {
 
+    private static RetrofitHelper instance = null;
     private static OkHttpClient okHttpClient = null;
-    private static VideoApis videoApi;
-    private static GankApis gankApis;
 
-    public static VideoApis getVideoApi() {
-        initOkHttp();
-        if (videoApi == null) {
-            Retrofit retrofit = new Retrofit.Builder()
-                    .client(okHttpClient)
-                    .baseUrl(VideoApis.HOST)
-                    .addConverterFactory(GsonConverterFactory.create())
-                    .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
-                    .build();
-            videoApi = retrofit.create(VideoApis.class);
+//    public static GankApis getGankApis() {
+//        initOkHttp();
+//        if (gankApis == null) {
+//            Retrofit retrofit = new Retrofit.Builder()
+//                    .client(okHttpClient)
+//                    .baseUrl(GankApis.HOST)
+//                    .addConverterFactory(GsonConverterFactory.create())
+//                    .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
+//                    .build();
+//            gankApis = retrofit.create(GankApis.class);
+//        }
+//        return instance;
+//    }
+
+    public static RetrofitHelper getInstance() {
+        if (instance == null) {
+            synchronized (RetrofitHelper.class) {
+                if (instance == null) {//2
+                    instance = new RetrofitHelper();
+                }
+            }
         }
-        return videoApi;
+        return instance;
     }
-    public static GankApis getGankApis() {
-        initOkHttp();
-        if (gankApis == null) {
-            Retrofit retrofit = new Retrofit.Builder()
-                    .client(okHttpClient)
-                    .baseUrl(GankApis.HOST)
-                    .addConverterFactory(GsonConverterFactory.create())
-                    .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
-                    .build();
-            gankApis = retrofit.create(GankApis.class);
-        }
-        return gankApis;
-    }
-    private static void initOkHttp() {
+
+    public void initOkHttp() {
         if (okHttpClient == null) {
             OkHttpClient.Builder builder = new OkHttpClient.Builder();
             if (BuildConfig.DEBUG) {

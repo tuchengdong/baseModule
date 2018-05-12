@@ -1,9 +1,5 @@
 package com.arthur.tu.base.model.exception;
 
-/**
- * Created by 12262 on 2016/5/31.
- * 与服务器约定好的异常
- */
 public class ERROR {
     /**
      * 未知错误

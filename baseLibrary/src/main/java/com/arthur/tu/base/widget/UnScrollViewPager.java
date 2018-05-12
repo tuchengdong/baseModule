@@ -8,9 +8,6 @@ import android.widget.Scroller;
 
 import com.arthur.tu.base.utils.MyLogger;
 
-/**
- * Created by Xuanhao on 2016/3/8.
- */
 public class UnScrollViewPager extends ViewPager {
 
     private boolean isScrollable = false;

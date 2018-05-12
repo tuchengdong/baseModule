@@ -5,12 +5,6 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
 
-/**
- * 
- * @Description 自动换行TextView
- * @Version v1.0
- * @author Xuanhao
- */
 public class WordWrapView extends ViewGroup {
 	private static final int PADDING_HOR = 10;// 水平方向padding
 	private static final int PADDING_VERTICAL = 10;// 垂直方向padding
