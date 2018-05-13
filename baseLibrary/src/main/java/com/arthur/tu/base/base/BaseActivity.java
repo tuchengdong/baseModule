@@ -15,6 +15,7 @@ import com.arthur.tu.base.utils.ScreenUtil;
 
 import me.yokeyword.fragmentation.SupportActivity;
 
+//for test
 public abstract class BaseActivity extends SupportActivity {
 
     protected Activity mContext;
