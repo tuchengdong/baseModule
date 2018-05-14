@@ -25,7 +25,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class RetrofitHelper {
 
     private static RetrofitHelper instance = null;
-    private static OkHttpClient okHttpClient = null;
+    public static OkHttpClient okHttpClient = null;
 
 //    public static GankApis getGankApis() {
 //        initOkHttp();
